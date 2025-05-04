@@ -1,102 +1,323 @@
-import Image from "next/image";
+import Image from 'next/image';
+import Link from 'next/link';
+import { ChevronRight } from 'lucide-react';
+import MobileMenu from '@/components/mobile-menu';
+import MobileFooter from '@/components/mobile-footer';
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <div className="flex min-h-screen flex-col">
+      {/* Main Content */}
+      <main className="flex-grow">
+        {/* Header Navigation */}
+        <header className="flex items-center justify-between px-4 py-6 md:px-8">
+          {/* Mobile Menu */}
+          <MobileMenu />
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+          {/* Left Navigation - Desktop Only */}
+          <nav className="hidden items-center space-x-8 lg:flex">
+            <Link href="/" className="text-[#212121] hover:text-[#575555]">
+              Home
+            </Link>
+            <div className="group relative">
+              <Link
+                href="/bags"
+                className="text-[#212121] hover:text-[#575555]"
+              >
+                Bags
+              </Link>
+              <div className="absolute top-full left-0 z-10 hidden pt-2 group-hover:block">
+                <div className="min-w-[180px] bg-white py-4">
+                  <Link
+                    href="/bags"
+                    className="block py-1 text-[#212121] hover:text-[#575555]"
+                  >
+                    View all
+                  </Link>
+                  <Link
+                    href="/bags/top-handle"
+                    className="block py-1 text-[#212121] hover:text-[#575555]"
+                  >
+                    Top handle bags
+                  </Link>
+                  <Link
+                    href="/bags/cross-body"
+                    className="block py-1 text-[#212121] hover:text-[#575555]"
+                  >
+                    Cross body bags
+                  </Link>
+                  <Link
+                    href="/bags/backpacks"
+                    className="block py-1 text-[#212121] hover:text-[#575555]"
+                  >
+                    Backpacks
+                  </Link>
+                  <Link
+                    href="/bags/shoulder"
+                    className="block py-1 text-[#212121] hover:text-[#575555]"
+                  >
+                    Shoulder bags
+                  </Link>
+                  <Link
+                    href="/bags/business"
+                    className="block py-1 text-[#212121] hover:text-[#575555]"
+                  >
+                    Business bags
+                  </Link>
+                  <Link
+                    href="/bags/shoppers"
+                    className="block py-1 text-[#212121] hover:text-[#575555]"
+                  >
+                    Shoppers
+                  </Link>
+                  <Link
+                    href="/bags/clutches"
+                    className="block py-1 text-[#212121] hover:text-[#575555]"
+                  >
+                    Clutches
+                  </Link>
+                  <Link
+                    href="/bags/travel"
+                    className="block py-1 text-[#212121] hover:text-[#575555]"
+                  >
+                    Travel
+                  </Link>
+                  <Link
+                    href="/bags/small"
+                    className="block py-1 text-[#212121] hover:text-[#575555]"
+                  >
+                    Small bags
+                  </Link>
+                  <Link
+                    href="/bags/leather-goods"
+                    className="block py-1 text-[#212121] hover:text-[#575555]"
+                  >
+                    Small leather goods
+                  </Link>
+                </div>
+              </div>
+            </div>
+            <Link
+              href="/collections"
+              className="text-[#212121] hover:text-[#575555]"
+            >
+              Collections
+            </Link>
+            <Link
+              href="/new-arrivals"
+              className="text-[#212121] hover:text-[#575555]"
+            >
+              New arrivals
+            </Link>
+            <Link
+              href="/personalisation"
+              className="text-[#212121] hover:text-[#575555]"
+            >
+              Personalisation
+            </Link>
+          </nav>
+
+          {/* Logo */}
+          <div className="absolute left-1/2 -translate-x-1/2 transform">
+            <Link
+              href="/"
+              className="text-4xl font-light tracking-widest text-[#212121]"
+            >
+              <Image src="/logo.png" alt="Logo" width={89.11} height={63} />
+            </Link>
+          </div>
+
+          {/* Right Navigation - Desktop Only */}
+          <nav className="hidden items-center space-x-8 lg:flex">
+            <Link
+              href="/art-gallery"
+              className="text-[#212121] hover:text-[#575555]"
+            >
+              Art gallery
+            </Link>
+            <Link
+              href="/about-us"
+              className="text-[#212121] hover:text-[#575555]"
+            >
+              About us
+            </Link>
+            <div className="group relative">
+              <Link
+                href="/contacts"
+                className="text-[#212121] hover:text-[#575555]"
+              >
+                Contacts
+              </Link>
+              <div className="absolute top-full right-0 z-10 hidden pt-2 group-hover:block">
+                <div className="min-w-[180px] bg-white px-0 py-4">
+                  <Link
+                    href="/story"
+                    className="block py-1 text-[#212121] hover:text-[#575555]"
+                  >
+                    Story
+                  </Link>
+                  <Link
+                    href="/mission"
+                    className="block py-1 text-[#212121] hover:text-[#575555]"
+                  >
+                    Mission
+                  </Link>
+                  <Link
+                    href="/craftsmanship"
+                    className="block py-1 text-[#212121] hover:text-[#575555]"
+                  >
+                    Craftsmanship
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </nav>
+
+          {/* Empty div for mobile to maintain flex layout */}
+          <div className="w-6 lg:hidden"></div>
+        </header>
+
+        {/* Featured Products */}
+        <div className="mx-auto grid w-2/3 grid-cols-1 gap-4 px-4 py-8 md:gap-32 md:px-8 md:py-32 lg:grid-cols-2">
+          <div className="rounded-sm bg-[#f3f0f0] p-4 md:p-8">
+            <div className="relative aspect-square w-full">
+              <Image
+                src="/placeholder.svg?height=600&width=600"
+                alt="Featured bag in spotlight"
+                width={600}
+                height={600}
+                className="h-full w-full object-cover"
+              />
+            </div>
+          </div>
+          <div className="rounded-sm bg-[#f3f0f0] p-4 md:p-8">
+            <div className="relative aspect-square w-full">
+              <Image
+                src="/placeholder.svg?height=600&width=600"
+                alt="Model with grie bag"
+                width={600}
+                height={600}
+                className="h-full w-full object-cover"
+              />
+              <div className="absolute inset-0 flex items-center justify-center">
+                <span className="text-4xl font-light tracking-widest text-white">
+                  g r i e
+                </span>
+              </div>
+            </div>
+          </div>
         </div>
       </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+
+      {/* Mobile Footer */}
+      <MobileFooter />
+
+      {/* Desktop Footer */}
+      <footer className="mt-20 hidden border-t border-[#d6caca] px-8 pt-8 pb-16 lg:block">
+        <div className="grid grid-cols-5 gap-8">
+          {/* Language Selection */}
+          <div>
+            <h4 className="mb-4 text-sm text-[#646161]">Choose language</h4>
+            <button className="text-[#212121] hover:text-[#575555]">
+              Ukraine
+            </button>
+          </div>
+
+          {/* Corporate Info */}
+          <div>
+            <Link
+              href="/corporate-gifts"
+              className="block py-1 text-[#212121] hover:text-[#575555]"
+            >
+              Corporate gifts
+            </Link>
+            <Link
+              href="/care-instructions"
+              className="block py-1 text-[#212121] hover:text-[#575555]"
+            >
+              Care instructions
+            </Link>
+            <Link
+              href="/warranty"
+              className="block py-1 text-[#212121] hover:text-[#575555]"
+            >
+              Warranty
+            </Link>
+          </div>
+
+          {/* Shop Links */}
+          <div>
+            <Link
+              href="/shop"
+              className="block py-1 text-[#212121] hover:text-[#575555]"
+            >
+              Shop
+            </Link>
+            <Link
+              href="/contact-us"
+              className="block py-1 text-[#212121] hover:text-[#575555]"
+            >
+              Contact us
+            </Link>
+            <Link
+              href="/instagram"
+              className="block py-1 text-[#212121] hover:text-[#575555]"
+            >
+              Instagram
+            </Link>
+          </div>
+
+          {/* Payment and Shipment */}
+          <div>
+            <Link
+              href="/payment-shipment"
+              className="block py-1 text-[#212121] hover:text-[#575555]"
+            >
+              Payment and shipment
+            </Link>
+            <Link
+              href="/return-policy"
+              className="block py-1 text-[#212121] hover:text-[#575555]"
+            >
+              Return Policy
+            </Link>
+            <Link
+              href="/legal-privacy"
+              className="block py-1 text-[#212121] hover:text-[#575555]"
+            >
+              Legal & privacy
+            </Link>
+          </div>
+
+          {/* Newsletter */}
+          <div>
+            <h4 className="mb-4 text-sm text-[#212121]">
+              Subscribe to newsletter:
+            </h4>
+            <div className="mb-4 flex items-center border-b border-[#212121] pb-1">
+              <input
+                type="email"
+                placeholder="Your email address"
+                className="w-full bg-transparent text-[#212121] outline-none"
+              />
+              <button className="ml-2">
+                <ChevronRight className="h-5 w-5 text-[#212121]" />
+              </button>
+            </div>
+            <div className="flex items-start gap-2">
+              <input type="checkbox" id="privacy-policy" className="mt-1" />
+              <label
+                htmlFor="privacy-policy"
+                className="text-sm text-[#646161]"
+              >
+                I have read and understand{' '}
+                <Link href="/privacy-policy" className="underline">
+                  Privacy Policy
+                </Link>
+              </label>
+            </div>
+          </div>
+        </div>
       </footer>
     </div>
   );
