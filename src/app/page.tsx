@@ -7,202 +7,203 @@ import MobileFooter from '@/components/mobile-footer';
 export default function Home() {
   return (
     <div className="flex min-h-screen flex-col">
+      {/* Header Navigation */}
+      <header className="flex items-center justify-between px-4 py-6 md:px-8">
+        {/* Mobile Menu */}
+        <MobileMenu />
+
+        {/* Left Navigation - Desktop Only */}
+        <nav className="hidden items-center space-x-8 lg:flex">
+          <Link href="/" className="text-[#212121] hover:text-[#575555]">
+            Home
+          </Link>
+          <div className="group relative">
+            <Link href="/bags" className="text-[#212121] hover:text-[#575555]">
+              Bags
+            </Link>
+            <div className="absolute top-full left-0 z-10 hidden pt-2 group-hover:block">
+              <div className="min-w-[180px] bg-white py-4">
+                <Link
+                  href="/bags"
+                  className="block py-1 text-[#212121] hover:text-[#575555]"
+                >
+                  View all
+                </Link>
+                <Link
+                  href="/bags/top-handle"
+                  className="block py-1 text-[#212121] hover:text-[#575555]"
+                >
+                  Top handle bags
+                </Link>
+                <Link
+                  href="/bags/cross-body"
+                  className="block py-1 text-[#212121] hover:text-[#575555]"
+                >
+                  Cross body bags
+                </Link>
+                <Link
+                  href="/bags/backpacks"
+                  className="block py-1 text-[#212121] hover:text-[#575555]"
+                >
+                  Backpacks
+                </Link>
+                <Link
+                  href="/bags/shoulder"
+                  className="block py-1 text-[#212121] hover:text-[#575555]"
+                >
+                  Shoulder bags
+                </Link>
+                <Link
+                  href="/bags/business"
+                  className="block py-1 text-[#212121] hover:text-[#575555]"
+                >
+                  Business bags
+                </Link>
+                <Link
+                  href="/bags/shoppers"
+                  className="block py-1 text-[#212121] hover:text-[#575555]"
+                >
+                  Shoppers
+                </Link>
+                <Link
+                  href="/bags/clutches"
+                  className="block py-1 text-[#212121] hover:text-[#575555]"
+                >
+                  Clutches
+                </Link>
+                <Link
+                  href="/bags/travel"
+                  className="block py-1 text-[#212121] hover:text-[#575555]"
+                >
+                  Travel
+                </Link>
+                <Link
+                  href="/bags/small"
+                  className="block py-1 text-[#212121] hover:text-[#575555]"
+                >
+                  Small bags
+                </Link>
+                <Link
+                  href="/bags/leather-goods"
+                  className="block py-1 text-[#212121] hover:text-[#575555]"
+                >
+                  Small leather goods
+                </Link>
+              </div>
+            </div>
+          </div>
+          <Link
+            href="/collections"
+            className="text-[#212121] hover:text-[#575555]"
+          >
+            Collections
+          </Link>
+          <Link
+            href="/new-arrivals"
+            className="text-[#212121] hover:text-[#575555]"
+          >
+            New arrivals
+          </Link>
+          <Link
+            href="/personalisation"
+            className="text-[#212121] hover:text-[#575555]"
+          >
+            Personalisation
+          </Link>
+        </nav>
+
+        {/* Logo */}
+        <div className="absolute left-1/2 -translate-x-1/2 transform">
+          <Link
+            href="/"
+            className="text-4xl font-light tracking-widest text-[#212121]"
+          >
+            <Image src="/logo.png" alt="Logo" width={89.11} height={63} />
+          </Link>
+        </div>
+
+        {/* Right Navigation - Desktop Only */}
+        <nav className="hidden items-center space-x-8 lg:flex">
+          <Link
+            href="/art-gallery"
+            className="text-[#212121] hover:text-[#575555]"
+          >
+            Art gallery
+          </Link>
+          <Link
+            href="/about-us"
+            className="text-[#212121] hover:text-[#575555]"
+          >
+            About us
+          </Link>
+          <div className="group relative">
+            <Link
+              href="/contacts"
+              className="text-[#212121] hover:text-[#575555]"
+            >
+              Contacts
+            </Link>
+            <div className="absolute top-full right-0 z-10 hidden pt-2 group-hover:block">
+              <div className="min-w-[180px] bg-white px-0 py-4">
+                <Link
+                  href="/story"
+                  className="block py-1 text-[#212121] hover:text-[#575555]"
+                >
+                  Story
+                </Link>
+                <Link
+                  href="/mission"
+                  className="block py-1 text-[#212121] hover:text-[#575555]"
+                >
+                  Mission
+                </Link>
+                <Link
+                  href="/craftsmanship"
+                  className="block py-1 text-[#212121] hover:text-[#575555]"
+                >
+                  Craftsmanship
+                </Link>
+              </div>
+            </div>
+          </div>
+        </nav>
+
+        {/* Empty div for mobile to maintain flex layout */}
+        <div className="w-6 lg:hidden"></div>
+      </header>
+
       {/* Main Content */}
-      <main className="flex-grow">
-        {/* Header Navigation */}
-        <header className="flex items-center justify-between px-4 py-6 md:px-8">
-          {/* Mobile Menu */}
-          <MobileMenu />
-
-          {/* Left Navigation - Desktop Only */}
-          <nav className="hidden items-center space-x-8 lg:flex">
-            <Link href="/" className="text-[#212121] hover:text-[#575555]">
-              Home
-            </Link>
-            <div className="group relative">
-              <Link
-                href="/bags"
-                className="text-[#212121] hover:text-[#575555]"
-              >
-                Bags
-              </Link>
-              <div className="absolute top-full left-0 z-10 hidden pt-2 group-hover:block">
-                <div className="min-w-[180px] bg-white py-4">
-                  <Link
-                    href="/bags"
-                    className="block py-1 text-[#212121] hover:text-[#575555]"
-                  >
-                    View all
-                  </Link>
-                  <Link
-                    href="/bags/top-handle"
-                    className="block py-1 text-[#212121] hover:text-[#575555]"
-                  >
-                    Top handle bags
-                  </Link>
-                  <Link
-                    href="/bags/cross-body"
-                    className="block py-1 text-[#212121] hover:text-[#575555]"
-                  >
-                    Cross body bags
-                  </Link>
-                  <Link
-                    href="/bags/backpacks"
-                    className="block py-1 text-[#212121] hover:text-[#575555]"
-                  >
-                    Backpacks
-                  </Link>
-                  <Link
-                    href="/bags/shoulder"
-                    className="block py-1 text-[#212121] hover:text-[#575555]"
-                  >
-                    Shoulder bags
-                  </Link>
-                  <Link
-                    href="/bags/business"
-                    className="block py-1 text-[#212121] hover:text-[#575555]"
-                  >
-                    Business bags
-                  </Link>
-                  <Link
-                    href="/bags/shoppers"
-                    className="block py-1 text-[#212121] hover:text-[#575555]"
-                  >
-                    Shoppers
-                  </Link>
-                  <Link
-                    href="/bags/clutches"
-                    className="block py-1 text-[#212121] hover:text-[#575555]"
-                  >
-                    Clutches
-                  </Link>
-                  <Link
-                    href="/bags/travel"
-                    className="block py-1 text-[#212121] hover:text-[#575555]"
-                  >
-                    Travel
-                  </Link>
-                  <Link
-                    href="/bags/small"
-                    className="block py-1 text-[#212121] hover:text-[#575555]"
-                  >
-                    Small bags
-                  </Link>
-                  <Link
-                    href="/bags/leather-goods"
-                    className="block py-1 text-[#212121] hover:text-[#575555]"
-                  >
-                    Small leather goods
-                  </Link>
-                </div>
-              </div>
-            </div>
-            <Link
-              href="/collections"
-              className="text-[#212121] hover:text-[#575555]"
-            >
-              Collections
-            </Link>
-            <Link
-              href="/new-arrivals"
-              className="text-[#212121] hover:text-[#575555]"
-            >
-              New arrivals
-            </Link>
-            <Link
-              href="/personalisation"
-              className="text-[#212121] hover:text-[#575555]"
-            >
-              Personalisation
-            </Link>
-          </nav>
-
-          {/* Logo */}
-          <div className="absolute left-1/2 -translate-x-1/2 transform">
-            <Link
-              href="/"
-              className="text-4xl font-light tracking-widest text-[#212121]"
-            >
-              <Image src="/logo.png" alt="Logo" width={89.11} height={63} />
-            </Link>
-          </div>
-
-          {/* Right Navigation - Desktop Only */}
-          <nav className="hidden items-center space-x-8 lg:flex">
-            <Link
-              href="/art-gallery"
-              className="text-[#212121] hover:text-[#575555]"
-            >
-              Art gallery
-            </Link>
-            <Link
-              href="/about-us"
-              className="text-[#212121] hover:text-[#575555]"
-            >
-              About us
-            </Link>
-            <div className="group relative">
-              <Link
-                href="/contacts"
-                className="text-[#212121] hover:text-[#575555]"
-              >
-                Contacts
-              </Link>
-              <div className="absolute top-full right-0 z-10 hidden pt-2 group-hover:block">
-                <div className="min-w-[180px] bg-white px-0 py-4">
-                  <Link
-                    href="/story"
-                    className="block py-1 text-[#212121] hover:text-[#575555]"
-                  >
-                    Story
-                  </Link>
-                  <Link
-                    href="/mission"
-                    className="block py-1 text-[#212121] hover:text-[#575555]"
-                  >
-                    Mission
-                  </Link>
-                  <Link
-                    href="/craftsmanship"
-                    className="block py-1 text-[#212121] hover:text-[#575555]"
-                  >
-                    Craftsmanship
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </nav>
-
-          {/* Empty div for mobile to maintain flex layout */}
-          <div className="w-6 lg:hidden"></div>
-        </header>
-
+      <main className="flex flex-grow items-center justify-center">
         {/* Featured Products */}
-        <div className="mx-auto grid w-2/3 grid-cols-1 gap-4 px-4 py-8 md:gap-32 md:px-8 md:py-32 lg:grid-cols-2">
-          <div className="rounded-sm bg-[#f3f0f0] p-4 md:p-8">
-            <div className="relative aspect-square w-full">
-              <Image
-                src="/placeholder.svg?height=600&width=600"
-                alt="Featured bag in spotlight"
-                width={600}
-                height={600}
-                className="h-full w-full object-cover"
-              />
-            </div>
-          </div>
-          <div className="rounded-sm bg-[#f3f0f0] p-4 md:p-8">
-            <div className="relative aspect-square w-full">
-              <Image
-                src="/placeholder.svg?height=600&width=600"
-                alt="Model with grie bag"
-                width={600}
-                height={600}
-                className="h-full w-full object-cover"
-              />
-              <div className="absolute inset-0 flex items-center justify-center">
-                <span className="text-4xl font-light tracking-widest text-white">
-                  g r i e
-                </span>
+        <div className="px-24 py-12 md:px-32 md:py-16 xl:px-48">
+          <div className="mx-auto max-w-5xl">
+            <div className="grid grid-cols-2 gap-16 md:gap-24 lg:gap-32">
+              <div className="rounded-sm bg-[#f3f0f0] p-4 md:p-8">
+                <div className="relative aspect-square w-full">
+                  <Image
+                    src="/placeholder.svg?height=400&width=400"
+                    alt="Featured bag in spotlight"
+                    width={400}
+                    height={400}
+                    className="h-full w-full object-cover"
+                  />
+                </div>
+              </div>
+              <div className="rounded-sm bg-[#f3f0f0] p-4 md:p-8">
+                <div className="relative aspect-square w-full">
+                  <Image
+                    src="/placeholder.svg?height=400&width=400"
+                    alt="Model with grie bag"
+                    width={400}
+                    height={400}
+                    className="h-full w-full object-cover"
+                  />
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <span className="text-4xl font-light tracking-widest text-white">
+                      g r i e
+                    </span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
