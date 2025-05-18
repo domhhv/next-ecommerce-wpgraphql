@@ -3,8 +3,9 @@ import Link from 'next/link';
 import { ChevronRight } from 'lucide-react';
 import MobileMenu from '@/components/mobile-menu';
 import MobileFooter from '@/components/mobile-footer';
+import Navigation from '@/components/navigation';
 
-export default function Home() {
+export default async function Home() {
   return (
     <div className="flex min-h-screen flex-col">
       {/* Header Navigation */}
@@ -12,105 +13,7 @@ export default function Home() {
         {/* Mobile Menu */}
         <MobileMenu />
 
-        {/* Left Navigation - Desktop Only */}
-        <nav className="hidden items-center space-x-8 lg:flex">
-          <Link href="/" className="text-[#212121] hover:text-[#575555]">
-            Home
-          </Link>
-          <div className="group relative">
-            <Link href="/bags" className="text-[#212121] hover:text-[#575555]">
-              Bags
-            </Link>
-            <div className="absolute top-full left-0 z-10 hidden pt-2 group-hover:block">
-              <div className="min-w-[180px] bg-white py-4">
-                <Link
-                  href="/bags"
-                  className="block py-1 text-[#212121] hover:text-[#575555]"
-                >
-                  View all
-                </Link>
-                <Link
-                  href="/bags/top-handle"
-                  className="block py-1 text-[#212121] hover:text-[#575555]"
-                >
-                  Top handle bags
-                </Link>
-                <Link
-                  href="/bags/cross-body"
-                  className="block py-1 text-[#212121] hover:text-[#575555]"
-                >
-                  Cross body bags
-                </Link>
-                <Link
-                  href="/bags/backpacks"
-                  className="block py-1 text-[#212121] hover:text-[#575555]"
-                >
-                  Backpacks
-                </Link>
-                <Link
-                  href="/bags/shoulder"
-                  className="block py-1 text-[#212121] hover:text-[#575555]"
-                >
-                  Shoulder bags
-                </Link>
-                <Link
-                  href="/bags/business"
-                  className="block py-1 text-[#212121] hover:text-[#575555]"
-                >
-                  Business bags
-                </Link>
-                <Link
-                  href="/bags/shoppers"
-                  className="block py-1 text-[#212121] hover:text-[#575555]"
-                >
-                  Shoppers
-                </Link>
-                <Link
-                  href="/bags/clutches"
-                  className="block py-1 text-[#212121] hover:text-[#575555]"
-                >
-                  Clutches
-                </Link>
-                <Link
-                  href="/bags/travel"
-                  className="block py-1 text-[#212121] hover:text-[#575555]"
-                >
-                  Travel
-                </Link>
-                <Link
-                  href="/bags/small"
-                  className="block py-1 text-[#212121] hover:text-[#575555]"
-                >
-                  Small bags
-                </Link>
-                <Link
-                  href="/bags/leather-goods"
-                  className="block py-1 text-[#212121] hover:text-[#575555]"
-                >
-                  Small leather goods
-                </Link>
-              </div>
-            </div>
-          </div>
-          <Link
-            href="/collections"
-            className="text-[#212121] hover:text-[#575555]"
-          >
-            Collections
-          </Link>
-          <Link
-            href="/new-arrivals"
-            className="text-[#212121] hover:text-[#575555]"
-          >
-            New arrivals
-          </Link>
-          <Link
-            href="/personalisation"
-            className="text-[#212121] hover:text-[#575555]"
-          >
-            Personalisation
-          </Link>
-        </nav>
+        <Navigation />
 
         {/* Logo */}
         <div className="absolute left-1/2 -translate-x-1/2 transform">

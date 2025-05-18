@@ -2,12 +2,15 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { X } from 'lucide-react';
+import { X, ChevronDown, ChevronUp } from 'lucide-react';
+import MobileCategories from './mobile-categories';
 
 export default function MobileMenu() {
   const [isOpen, setIsOpen] = useState(false);
+  const [showCategories, setShowCategories] = useState(false);
 
   const closeMenu = () => setIsOpen(false);
+  const toggleCategories = () => setShowCategories(!showCategories);
 
   return (
     <div className="lg:hidden">
@@ -34,13 +37,22 @@ export default function MobileMenu() {
           <div className="px-6 py-4">
             <nav className="flex flex-col space-y-6">
               <div className="flex flex-col space-y-4">
-                <Link
-                  href="/bags"
-                  className="py-2 text-[#212121]"
-                  onClick={closeMenu}
-                >
-                  Bags
-                </Link>
+                <div>
+                  <button
+                    onClick={toggleCategories}
+                    className="flex w-full items-center justify-between py-2 text-[#212121]"
+                  >
+                    <span>Bags</span>
+                    {showCategories ? (
+                      <ChevronUp className="h-4 w-4 text-[#212121]" />
+                    ) : (
+                      <ChevronDown className="h-4 w-4 text-[#212121]" />
+                    )}
+                  </button>
+                  {showCategories && (
+                    <MobileCategories onSelectCategory={closeMenu} />
+                  )}
+                </div>
                 <Link
                   href="/collections"
                   className="py-2 text-[#212121]"
